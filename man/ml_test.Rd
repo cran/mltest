@@ -16,29 +16,29 @@ ml_test(predicted, true, output.as.table = FALSE)
 }
 \value{
 the function returns a list of following metrics:
-  \item{ \strong{accuracy} }{ \emph{calculated as:} (TP+TN) / (TP+FP+TN+FN) \emph{(doesn't show up when output.as.table = TRUE)}}
-  \item{ \strong{balanced.accuracy} }{ \emph{calculated as:} (TP / (TP+FN)+TN / (TN+FP)) / 2 = (recall+specificity) / 2}
-  \item{ \strong{DOR} }{ \emph{calculated as:}  TP*TN / (FP*FN) = L / lambda}
-  \item{ \strong{error.rate} }{ \emph{calculated as:}  (FP+FN) / (TP+TN+FP+FN) = 1-accuracy \emph{(doesn't show up when output.as.table = TRUE)}}
-  \item{ \strong{F0.5} }{ \emph{calculated as:}  1.25*(recall*precision/(0.25*precision+recall))}
-  \item{ \strong{F1} }{ \emph{calculated as:}  2*(precision*recall / (precision+recall))}
-  \item{ \strong{F2} }{ \emph{calculated as:}  5*(precision*recall / (4*precision+recall))}
-  \item{ \strong{FDR} }{ \emph{calculated as:}  1-precision}
-  \item{ \strong{FNR} }{ \emph{calculated as:}  1-recall}
-  \item{ \strong{FOR} }{ \emph{calculated as:}  1-NPV}
-  \item{ \strong{FPR} }{ \emph{calculated as:}  1-specificity}
-  \item{ \strong{geometric.mean} }{ \emph{calculated as:}  (recall*specificity)^0.5}
-  \item{ \strong{Jaccard} }{ \emph{calculated as:}  TP / (TP+FP+FN)}
-  \item{ \strong{L} }{ \emph{calculated as:}  recall / (1-specificity)}
-  \item{ \strong{lambda} }{ \emph{calculated as:}  (1-recall) / (specificity)}
-  \item{ \strong{MCC} }{ \emph{calculated as:}  (TP*TN-FP*FN) / (((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN))^0.5)}
-  \item{ \strong{MK} }{ \emph{calculated as:}  precision + NPV - 1}
-  \item{ \strong{NPV} }{ \emph{calculated as:}  TN / (TN+FN)}
-  \item{ \strong{OP} }{ \emph{calculated as:}  accuracy - |recall-specificity| / (recall+specificity)}
-  \item{ \strong{precision} }{ \emph{calculated as:} TP / (TP+FP)}
-  \item{ \strong{recall} }{ \emph{calculated as:}  TP / (TP+FN)}
-  \item{ \strong{specificity} }{ \emph{calculated as:}  TN / (TN+FP)}
-  \item{ \strong{Youden} }{ \emph{calculated as:}  recall+specificity-1}
+  \item{accuracy}{ \emph{calculated as:} (TP+TN) / (TP+FP+TN+FN) \emph{(doesn't show up when output.as.table = TRUE)}}
+  \item{balanced.accuracy}{ \emph{calculated as:} (TP / (TP+FN)+TN / (TN+FP)) / 2 = (recall+specificity) / 2}
+  \item{DOR}{ \emph{calculated as:}  TP*TN / (FP*FN) = L / lambda}
+  \item{error.rate}{ \emph{calculated as:}  (FP+FN) / (TP+TN+FP+FN) = 1-accuracy \emph{(doesn't show up when output.as.table = TRUE)}}
+  \item{F0.5}{ \emph{calculated as:}  1.25*(recall*precision/(0.25*precision+recall))}
+  \item{F1}{ \emph{calculated as:}  2*(precision*recall / (precision+recall))}
+  \item{F2}{ \emph{calculated as:}  5*(precision*recall / (4*precision+recall))}
+  \item{FDR}{ \emph{calculated as:}  1-precision}
+  \item{FNR}{ \emph{calculated as:}  1-recall}
+  \item{FOR}{ \emph{calculated as:}  1-NPV}
+  \item{FPR}{ \emph{calculated as:}  1-specificity}
+  \item{geometric.mean}{ \emph{calculated as:}  (recall*specificity)^0.5}
+  \item{Jaccard}{ \emph{calculated as:}  TP / (TP+FP+FN)}
+  \item{L}{ \emph{calculated as:}  recall / (1-specificity)}
+  \item{lambda}{ \emph{calculated as:}  (1-recall) / (specificity)}
+  \item{MCC}{ \emph{calculated as:}  (TP*TN-FP*FN) / (((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN))^0.5)}
+  \item{MK}{ \emph{calculated as:}  precision + NPV - 1}
+  \item{NPV}{ \emph{calculated as:}  TN / (TN+FN)}
+  \item{OP}{ \emph{calculated as:}  accuracy - |recall-specificity| / (recall+specificity)}
+  \item{precision}{ \emph{calculated as:} TP / (TP+FP)}
+  \item{recall}{ \emph{calculated as:}  TP / (TP+FN)}
+  \item{specificity}{ \emph{calculated as:}  TN / (TN+FP)}
+  \item{Youden}{ \emph{calculated as:}  recall+specificity-1}
 }
 \description{
 Calculates multi-class classification evaluation metrics: \strong{balanced.accuracy}, balanced accuracy (\strong{balanced.accuracy}),
@@ -75,11 +75,11 @@ classifier_metrics <- ml_test(predicted_labels, true_labels, output.as.table = T
 \references{
 \enumerate{
   \item Sasaki Y. (2007). The truth of the F-measure.:1–5. \url{https://www.researchgate.net/publication/268185911_The_truth_of_the_F-measure}.
-  \item Powers DMW. (2011). Evaluation: from Precision, Recall and F-measure to ROC, Informedness, Markedness & Correlation. Arch Geschwulstforsch. 2(1):37–63. \url{https://www.researchgate.net/publication/313610493_Evaluation_From_precision_recall_and_fmeasure_to_roc_informedness_markedness_and_correlation}.
-  \item Bekkar M, Djemaa HK, Alitouche TA. (2013). Evaluation Measures for Models Assessment over Imbalanced Data Sets. J Inf Eng Appl. 3(10):27–38. \url{https://www.iiste.org/Journals/index.php/JIEA/article/view/7633}.
-  \item Jeni LA, Cohn JF, De La Torre F. (2013). Facing Imbalanced Data Recommendations for the Use of Performance Metrics. Conference on Affective Computing and Intelligent Interaction. IEEE. p. 245–51. \url{http://ieeexplore.ieee.org/document/6681438/}.
-  \item López V, Fernández A, García S, Palade V, Herrera F. (2013). An insight into classification with imbalanced data: Empirical results and current trends on using data intrinsic characteristics. Inf Sci. 250:113–41. \url{http://dx.doi.org/10.1016/j.ins.2013.07.007}.
-  \item Tharwat A. (2018). Classification assessment methods. Appl Comput Informatics . \url{https://linkinghub.elsevier.com/retrieve/pii/S2210832718301546}.
+  \item Powers DMW. (2011). Evaluation: from Precision, Recall and F-measure to ROC, Informedness, Markedness & Correlation. Arch Geschwulstforsch. 2(1):37–63. \doi{10.48550/arXiv.2010.16061}.
+  \item Bekkar M, Djemaa HK, Alitouche TA. (2013). Evaluation Measures for Models Assessment over Imbalanced Data Sets. J Inf Eng Appl. 3(10):27–38. \url{https://www.researchgate.net/publication/292718336_Evaluation_measures_for_models_assessment_over_imbalanced_data_sets}.
+  \item Jeni LA, Cohn JF, De La Torre F. (2013). Facing Imbalanced Data Recommendations for the Use of Performance Metrics. Conference on Affective Computing and Intelligent Interaction. IEEE. p. 245–51. \doi{10.1109/ACII.2013.47}.
+  \item López V, Fernández A, García S, Palade V, Herrera F. (2013). An insight into classification with imbalanced data: Empirical results and current trends on using data intrinsic characteristics. Inf Sci. 250:113–41. \doi{10.1016/j.ins.2013.07.007}.
+  \item Tharwat A. (2018). Classification assessment methods. Appl Comput Informatics . \doi{10.1016/j.aci.2018.08.003}.
 }
 }
 \author{

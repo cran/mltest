@@ -19,3 +19,13 @@
   <all-mtrics-list>$<particular-metric-type>. when the above
   "output.as.table" = TRUE the dataframe with all the metrics is returned (except for 
   "accuracy" and "error.rate")
+
+# mltest 1.0.2
+
+* \strong{} removed from within the the \item{} of the return in the #' @return
+  part of the roxygen2 header
+  - thanks to Dr. Hornik for the advice
+* \bugfix: `TN` is now caclulated correctly (#107):
+  TN <- sapply(1:length(TP), function(y) {sum(confusion_mtx[-y, -y], na.rm = TRUE)})
+  - thanks to Dr. Stewart for the advice
+* ORCID number is added in the description file
