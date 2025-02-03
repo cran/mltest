@@ -29,3 +29,11 @@
   TN <- sapply(1:length(TP), function(y) {sum(confusion_mtx[-y, -y], na.rm = TRUE)})
   - thanks to Dr. Stewart for the advice
 * ORCID number is added in the description file
+
+# mltest 1.0.3
+
+* added CRAN-assigned DOI to the inst/CITATION file
+* removed balanced.accuracy mentioned twice in the #' @description
+* removed 2nd parenthesis pair around `((\strong{FOR}))` in the .R file
+* replaced `\emph{calculated as:}` with `=` in the #' @return of the .R file
+* removed redundant parentheses in \item{F0.5}, \item{1} and \item{F2}

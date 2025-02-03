@@ -16,34 +16,34 @@ ml_test(predicted, true, output.as.table = FALSE)
 }
 \value{
 the function returns a list of following metrics:
-  \item{accuracy}{ \emph{calculated as:} (TP+TN) / (TP+FP+TN+FN) \emph{(doesn't show up when output.as.table = TRUE)}}
-  \item{balanced.accuracy}{ \emph{calculated as:} (TP / (TP+FN)+TN / (TN+FP)) / 2 = (recall+specificity) / 2}
-  \item{DOR}{ \emph{calculated as:}  TP*TN / (FP*FN) = L / lambda}
-  \item{error.rate}{ \emph{calculated as:}  (FP+FN) / (TP+TN+FP+FN) = 1-accuracy \emph{(doesn't show up when output.as.table = TRUE)}}
-  \item{F0.5}{ \emph{calculated as:}  1.25*(recall*precision/(0.25*precision+recall))}
-  \item{F1}{ \emph{calculated as:}  2*(precision*recall / (precision+recall))}
-  \item{F2}{ \emph{calculated as:}  5*(precision*recall / (4*precision+recall))}
-  \item{FDR}{ \emph{calculated as:}  1-precision}
-  \item{FNR}{ \emph{calculated as:}  1-recall}
-  \item{FOR}{ \emph{calculated as:}  1-NPV}
-  \item{FPR}{ \emph{calculated as:}  1-specificity}
-  \item{geometric.mean}{ \emph{calculated as:}  (recall*specificity)^0.5}
-  \item{Jaccard}{ \emph{calculated as:}  TP / (TP+FP+FN)}
-  \item{L}{ \emph{calculated as:}  recall / (1-specificity)}
-  \item{lambda}{ \emph{calculated as:}  (1-recall) / (specificity)}
-  \item{MCC}{ \emph{calculated as:}  (TP*TN-FP*FN) / (((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN))^0.5)}
-  \item{MK}{ \emph{calculated as:}  precision + NPV - 1}
-  \item{NPV}{ \emph{calculated as:}  TN / (TN+FN)}
-  \item{OP}{ \emph{calculated as:}  accuracy - |recall-specificity| / (recall+specificity)}
-  \item{precision}{ \emph{calculated as:} TP / (TP+FP)}
-  \item{recall}{ \emph{calculated as:}  TP / (TP+FN)}
-  \item{specificity}{ \emph{calculated as:}  TN / (TN+FP)}
-  \item{Youden}{ \emph{calculated as:}  recall+specificity-1}
+  \item{accuracy}{ = (TP+TN) / (TP+FP+TN+FN) \emph{(doesn't show up when output.as.table = TRUE)}}
+  \item{balanced.accuracy}{ = (TP / (TP+FN)+TN / (TN+FP)) / 2 = (recall+specificity) / 2}
+  \item{DOR}{ =  TP*TN / (FP*FN) = L / lambda}
+  \item{error.rate}{ =  (FP+FN) / (TP+TN+FP+FN) = 1-accuracy \emph{(doesn't show up when output.as.table = TRUE)}}
+  \item{F0.5}{ =  1.25*recall*precision/(0.25*precision+recall)}
+  \item{F1}{ =  2*recall*precision / (precision+recall)}
+  \item{F2}{ =  5*recall*precision / (4*precision+recall)}
+  \item{FDR}{ =  1-precision}
+  \item{FNR}{ =  1-recall}
+  \item{FOR}{ =  1-NPV}
+  \item{FPR}{ =  1-specificity}
+  \item{geometric.mean}{ =  (recall*specificity)^0.5}
+  \item{Jaccard}{ =  TP / (TP+FP+FN)}
+  \item{L}{ =  recall / (1-specificity)}
+  \item{lambda}{ =  (1-recall) / (specificity)}
+  \item{MCC}{ =  (TP*TN-FP*FN) / (((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN))^0.5)}
+  \item{MK}{ =  precision + NPV - 1}
+  \item{NPV}{ =  TN / (TN+FN)}
+  \item{OP}{ =  accuracy - |recall-specificity| / (recall+specificity)}
+  \item{precision}{ = TP / (TP+FP)}
+  \item{recall}{ =  TP / (TP+FN)}
+  \item{specificity}{ =  TN / (TN+FP)}
+  \item{Youden}{ =  recall+specificity-1}
 }
 \description{
-Calculates multi-class classification evaluation metrics: \strong{balanced.accuracy}, balanced accuracy (\strong{balanced.accuracy}),
+Calculates multi-class classification evaluation metrics: balanced accuracy (\strong{balanced.accuracy}),
 diagnostic odds ratio (\strong{DOR}), error rate (\strong{error.rate}), F.beta (\strong{F0.5}, \strong{F1} (F-measure, F-score), \strong{F2} with where beta is 0.5, 1 and 2 respectively),
-false positive rate (\strong{FPR}), false negative rate (\strong{FNR}), false omission rate ((\strong{FOR})), false discovery rate (\strong{FDR}),
+false positive rate (\strong{FPR}), false negative rate (\strong{FNR}), false omission rate (\strong{FOR}), false discovery rate (\strong{FDR}),
 geometric mean (\strong{geometric.mean}), \strong{Jaccard}, positive likelihood ratio (p+, LR(+) or simply \strong{L}),
 negative likelihood ratio (p-, LR(-) or simply \strong{lambda}),  Matthews corellation coefficient (\strong{MCC}), markedness (\strong{MK}), negative predictive value (\strong{NPV}),
 optimization precision \strong{OP}, \strong{precision}, \strong{recall} (sensitivity), \strong{specificity} and finally \strong{Youden}'s index.

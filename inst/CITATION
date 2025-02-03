@@ -2,5 +2,6 @@ bibentry(
   bibtype  = "Misc",
   title    = "mltest: An R Package for Classification Evaluation Metrics",
   author   = "G. Dudnik",
-  year     = "2018"
+  year     = "2018",
+  doi      = "10.32614/CRAN.package.mltest"
 )
